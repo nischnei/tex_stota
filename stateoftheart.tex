@@ -114,18 +114,19 @@ Für die Berechnung von $d_{max}$ und $d_{min}$ werden in diesem Paper die im Ve
 	\caption[Badino Interpolation]{ Vertikale und horizontale Interpolation. Die Farben kodieren die Entfernung \cite{Badino2011a} }.
  	\label{img:badino_interpolation}
 \end{figure}
-
-Im Anschluss wird durch Erosion eine minimale und durch Dilatation eine maximale Distanz berechnet. Diese Distanzen werden wiederum in minimale/maximale Disparitäten $d_min$, $d_max$ transformiert und daraus über Korrespondenzsuche ein Disparitätsbild berechnet. Die Schritte sind in Figure 
+Im Anschluss wird durch Erosion eine minimale und durch Dilatation eine maximale Distanz berechnet. Diese Distanzen werden wiederum in minimale/maximale Disparitäten $d_min$, $d_max$ transformiert und daraus über Korrespondenzsuche ein Disparitätsbild berechnet. Die Schritte sind in Figure \ref{img:badino_computation} verdeutlicht.
 
 \begin{figure}[ht]\centering%[]%[H]
 	\includegraphics[width=15cm]{images/png/badino_dsi_computation.png}
 	\caption[Reduziertes Disparitätsbild]{ Schritte zur Berechnung eines reduzierten Disparitätsbilds. \cite{Badino2011a} }.
-	\label{img:badino_interpolation}
+	\label{img:badino_computation}
 \end{figure}
 
+\textbf{Path Promotion:} Neben der Reduktion des Suchraums schlägt \cite{Badino2011a} eine weitere Disparitätsberechnung durch Dynamic Programming vor. In die Kostenfunktion fließen die über den LIDAR berechneten, prädizierten Disparitäten, sowie der Gradient des prädizierten Disparitätsbilds mit ein.
+Mögliche Verbesserungen dieses Algorithmus wäre die Erweiterung der einzeiligen Optimierung auf eine reduzierte zweidimensionale Version von Dynamic Programming
 
 
-\textbf{Path Promotion:}
+
 \subsection*{Mid-Level Sensor Fusion}
 
 % You may title this section "Methods" or "Models". 
