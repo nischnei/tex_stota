@@ -67,7 +67,8 @@
 % Title must be 150 characters or less
 \begin{flushleft}
 {\Large
-\textbf{Low-Level Fusion of Stereo Vision and ToF Range Sensors}
+\textbf{Low-Level Fusion of Stereo Vision and ToF Range Sensors\\
+		- A State of the Art Research}
 }
 % Insert Author names, affiliations and corresponding author email.
 \\
@@ -88,7 +89,15 @@ $\ast$ E-mail: nick.schneider@daimler.com
 
 \section*{Introduction}
 
-Die Vorteile von Time-of-Flight Sensoren liegen in der Genauigkeit und
+Die Vorteile von Time-of-Flight Sensoren liegen in der Genauigkeit und der schnellen Bereitstellung der Entfernungsdaten. Nachteile haben diese Sensoren jedoch in der geringen Auflösung und dem eingeschränkten Objektverständnis. Stereokamerasysteme dagegen punkten mit einer hohen Auflösung und einer hohen Genauigkeit in der Winkelmessung. Zudem sind Kamerasysteme in der Lage über Lernalgorithmen und Featureextraktion Objekte hinsichtlich ihrer Klasse genauer zu spezifizieren. Nachteile von Stereosystemen liegen in der Berechnung der Entfernungsdaten, bei der die passive Triangulation über eine Korrespondenzsuche zwischen linkem und rechtem Bild erfolgt.
+
+Eine Fusion von Time-Of-Flight-Sensoren und Stereokamera-Systemen liegt aus diesen Gründen nahe. Die Fusion kann dabei auf verschiedenen Ebenen erfolgen. In \cite{Haberjahn2010} wird zwischen Low-, Mid- und Highlevel Fusion unterschieden. Dabei versteht \cite{Haberjahn2010} unter Low-Level Fusion die Kombination der Rohdaten oder der kalibrierten und gefilterten Punkte der jeweiligen Sensoren. Low-Mid-Level Fusion betrachtet hingegen einen fusionierten Segmentierungsansatz, während Mid-Level die Fusion ganzer Segmente oder Objekte bearbeitet. Zuletzt werden bei der High-Level Fusion das Tracking oder die daraus resultierenden Trajektorien fusioniert. Eine Übersicht der Definition nach \cite{Haberjahn2010} findet sich in Figure \ref{img:haberjahn_sensorfusion}.
+
+\begin{figure}[ht]\centering%[]%[H]
+	\includegraphics[width=15cm]{images/png/haberjahn_sensorfusion.png}
+	\caption[Badino Interpolation]{ Vertikale und horizontale Interpolation. Die Farben kodieren die Entfernung \cite{Badino2011a} }.
+	\label{img:haberjahn_sensorfusion}
+\end{figure}
 
 \section*{State of the Art}
 
@@ -123,9 +132,9 @@ Im Anschluss wird durch Erosion eine minimale und durch Dilatation eine maximale
 \end{figure}
 
 \textbf{Path Promotion:} Neben der Reduktion des Suchraums schlägt \cite{Badino2011a} eine weitere Disparitätsberechnung durch Dynamic Programming vor. In die Kostenfunktion fließen die über den LIDAR berechneten, prädizierten Disparitäten, sowie der Gradient des prädizierten Disparitätsbilds mit ein.
-Mögliche Verbesserungen dieses Algorithmus wäre die Erweiterung der einzeiligen Optimierung auf eine reduzierte zweidimensionale Version von Dynamic Programming
+Mögliche Verbesserungen dieses Algorithmus wäre die Erweiterung der einzeiligen Optimierung auf eine reduzierte globale Version von Dynamic Programming durch Semi Global Matching, welche in \cite{Hirschmuller2005} vorgestellt wird.
 
-
+\subsubsection*{Fusion of time-of-flight depth and stereo for high accuracy depth maps Zhu, J. \cite{Zhu2008}}
 
 \subsection*{Mid-Level Sensor Fusion}
 
@@ -156,7 +165,7 @@ Mögliche Verbesserungen dieses Algorithmus wäre die Erweiterung der einzeilige
 %\end{figure}
 
 
-\section*{Tables}
+%\section*{Tables}
 %\begin{table}[!ht]
 %\caption{
 %\bf{Table title}}
